@@ -100,14 +100,15 @@ public class Control : MonoBehaviour
         if (hit.distance < 0.1f)
         {
             jumptime = 1;
-           
         }
 
         if (jump)
         {
             jumptime = Mathf.Lerp(jumptime, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce(Vector2.up * jumptime, ForceMode2D.Impulse);
-            if (rdb.velocity.y < 0)
+
+            // Impedir de pular enquanto segura a tecla de pulo
+            if (rdb.velocity.y < 0) 
             {
                 jumpagain = false;
             }
@@ -118,7 +119,7 @@ public class Control : MonoBehaviour
     // Rotina de pulo lateral.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
-        if (hitside.distance < 0.3f)
+        if (hitside.distance < 0.3f) // Código Inutil - APAGAR
         {
             jumptimeside = 6;
         }
