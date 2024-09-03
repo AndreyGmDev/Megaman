@@ -707,6 +707,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jago
       objectReference: {fileID: 0}
+    - target: {fileID: 7037361077010411948, guid: 3341115707461c647ae2d512af141739,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037361077010411948, guid: 3341115707461c647ae2d512af141739,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037361077010411948, guid: 3341115707461c647ae2d512af141739,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037361077010411948, guid: 3341115707461c647ae2d512af141739,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

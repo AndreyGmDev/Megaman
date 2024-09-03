@@ -19,8 +19,9 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
-        // Captura o movimento horizontal do jogador.
-        xmov = Input.GetAxis("Horizontal"); 
+        // Captura o movimento horizontal do jogador e Define a velocidade no Animator.
+        xmov = Input.GetAxis("Horizontal");
+        anima.SetFloat("Velocity", Mathf.Abs(xmov));
 
         // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
@@ -57,14 +58,11 @@ public class ControlPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        anima.SetFloat("Velocity", Mathf.Abs(xmov)); // Define a velocidade no Animator.
         rdb.AddForce(new Vector2(xmov * 20 / (rdb.velocity.magnitude + 1), 0)); // Adiciona uma força para mover o personagem.
 
         // Faz um raycast para baixo para detectar o chão para a animação de Pulo.
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position - new Vector3(0, 0.5f, 0), Vector2.down);
-        
-        
+        hit = Physics2D.Raycast(transform.position + Vector3.down * 0.5f, Vector2.down);
         if (hit)
         {
             anima.SetFloat("Height", hit.distance);
@@ -73,16 +71,21 @@ public class ControlPlayer : MonoBehaviour
         }
 
         // Faz um raycast para a direita para detectar paredes.
-        /*RaycastHit2D hitright;
-        hitright = Physics2D.Raycast(transform.position + Vector3.up * 0.5f, transform.right, 1);
+        RaycastHit2D hitright;
+        hitright = Physics2D.Raycast(transform.position + transform.right * 0.45f, transform.right); ;
+        Debug.DrawLine(transform.position + transform.right * 0.45f, hitright.point);
         if (hitright)
         {
-            if (hitright.distance < 0.3f && hit.distance > 0.5f)
+            if (hitright.distance < 0.03f && hit.distance > 0.3f)
             {
                 JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
             }
-            Debug.DrawLine(hitright.point, transform.position + Vector3.up * 0.5f);
-        }*/
+            else
+            {
+                anima.SetBool("Side", false);
+                rdb.gravityScale = 1f;
+            }
+        }
     }
 
     // Rotina de pulo (parte física).
@@ -111,14 +114,16 @@ public class ControlPlayer : MonoBehaviour
     // Rotina de pulo lateral.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
-        jumpTimeSide = 6;
+        anima.SetBool("Side", true);
+        rdb.gravityScale = 0.3f;
+        /*jumpTimeSide = 6;
 
         if (doubleJump)
         {
             // PhisicalReverser();
             jumpTimeSide = Mathf.Lerp(jumpTimeSide, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce((hitside.normal + Vector2.up) * jumpTimeSide, ForceMode2D.Impulse);
-        }
+        }*/
     }
 
 
