@@ -23,7 +23,7 @@ public class ControlPlayer : MonoBehaviour
         xmov = Input.GetAxis("Horizontal");
         anima.SetFloat("Velocity", Mathf.Abs(xmov));
         anima.SetFloat("HeightVelocity", Mathf.Abs(rdb.velocity.y));
-
+        
         // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
             doubleJump = true;
@@ -64,16 +64,18 @@ public class ControlPlayer : MonoBehaviour
         // Faz um raycast para baixo para detectar o chão para a animação de Pulo.
         RaycastHit2D hit;
         hit = Physics2D.Raycast(transform.position + Vector3.down * 0.5f, Vector2.down);
+        Debug.DrawLine(transform.position + Vector3.down * 0.5f, hit.point);
         if (hit)
         {
             anima.SetFloat("Height", hit.distance);
-            if (jumpTimeSide < 0.1)
-                JumpRoutine(hit); // Chama a rotina de pulo.
+            // if (jumpTimeSide < 0.1)
+            JumpRoutine(hit); // Chama a rotina de pulo.
         }
 
         // Faz um raycast para a direita para detectar paredes.
         RaycastHit2D hitright;
-        hitright = Physics2D.Raycast(transform.position + transform.right * 0.45f, transform.right); ;
+        hitright = Physics2D.Raycast(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), transform.right);
+        Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
         if (hitright)
         {
             if (hitright.distance < 0.03f && hit.distance > 0.3f)
@@ -82,8 +84,9 @@ public class ControlPlayer : MonoBehaviour
             }
             else
             {
+                print(transform.rotation.x);
                 anima.SetBool("Side", false);
-                rdb.gravityScale = 1f;
+                rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
             }
         }
     }
@@ -95,6 +98,7 @@ public class ControlPlayer : MonoBehaviour
         if (hit.distance < 0.1f)
         {
             jumpTime = 1;
+            doubleJump = false;
         }
 
         if (jump)
@@ -104,9 +108,7 @@ public class ControlPlayer : MonoBehaviour
 
             // Impedir de pular enquanto segura a tecla de pulo
             if (rdb.velocity.y < 0)
-            {
                 jumpAgain = false;
-            }
         }
 
     }
@@ -115,24 +117,28 @@ public class ControlPlayer : MonoBehaviour
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
         anima.SetBool("Side", true);
-        rdb.gravityScale = 0.3f;
 
-        /*jumpTimeSide = 6;
+        // Deixa a velocidade de queda do player mais lenta quando o player desce segurando na parede.
+        if (rdb.velocity.y<0 && Mathf.Abs(xmov)>0) 
+            rdb.gravityScale = 0.3f; 
+  
+        jumpTimeSide = 6;
 
         if (doubleJump)
         {
-            // PhisicalReverser();
             jumpTimeSide = Mathf.Lerp(jumpTimeSide, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce((hitside.normal + Vector2.up) * jumpTimeSide, ForceMode2D.Impulse);
-        }*/
+            // if (rdb.velocity.y < 0)
+            doubleJump = false;
+        }
     }
 
 
     // Função para inverter a direção do personagem.
     void PhisicalReverser()
     {
-        if (rdb.velocity.x > 0.1f) transform.rotation = Quaternion.Euler(0, 0, 0);
-        if (rdb.velocity.x < -0.1f) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (rdb.velocity.x > 0.001) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (rdb.velocity.x < -0.001) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
