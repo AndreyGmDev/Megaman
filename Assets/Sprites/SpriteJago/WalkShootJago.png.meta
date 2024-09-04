@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 119e245a5d99d654aa9220cfdb6dfa30
+guid: b28df5dba3077734491b939d0609a749
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkJago_0
+      name: WalkShootJago_0
       rect:
         serializedVersion: 2
         x: 13
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16fbc11bffe57fd478a27b0ac053be1b
-      internalID: -699015291
+      spriteID: 9db46ff41920f584ca99b1b395954bfb
+      internalID: 1083361489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_1
+      name: WalkShootJago_1
       rect:
         serializedVersion: 2
         x: 55
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f04b7a8a94ca8743a30c5dd1af4d626
-      internalID: -1460488477
+      spriteID: 58651cf904c09ca43bde48761bb18cbe
+      internalID: -1852233833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_2
+      name: WalkShootJago_2
       rect:
         serializedVersion: 2
         x: 101
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3590f1a125f94488e41340cfc350d2
-      internalID: 2028726686
+      spriteID: 0ba745265e4aefd4ba9b43ee00f32199
+      internalID: -1107371022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_3
+      name: WalkShootJago_3
       rect:
         serializedVersion: 2
         x: 156
         y: 2
-        width: 39
+        width: 41
         height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c36a8f66e800de4da69a4f7e71398a2
-      internalID: 61396576
+      spriteID: e6234159a575daa4fa7c5b4aa87fa43a
+      internalID: -871015587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_4
+      name: WalkShootJago_4
       rect:
         serializedVersion: 2
         x: 213
         y: 2
-        width: 36
+        width: 37
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 255069cfbb1fc144daf323ff551ab0a5
-      internalID: -1469577499
+      spriteID: 41ccc49263dc430468a56ae413caeb8b
+      internalID: 550142893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_5
+      name: WalkShootJago_5
       rect:
         serializedVersion: 2
         x: 255
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98e52eb75516fd44af90821ec9be992
-      internalID: 1661380740
+      spriteID: 59eb6856f6b780d47ad5d443d63e263b
+      internalID: 681341984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_6
+      name: WalkShootJago_6
       rect:
         serializedVersion: 2
         x: 301
@@ -250,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ade370d9f5cec854f9d368ea6eb91ce2
-      internalID: -1624633192
+      spriteID: f278c9952ca18bc4da0b7ad0d57b5b55
+      internalID: -1533675043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkJago_7
+      name: WalkShootJago_7
       rect:
         serializedVersion: 2
         x: 356
         y: 2
-        width: 39
+        width: 41
         height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4fad96418c325c42ad0fad1857ece63
-      internalID: 605668045
+      spriteID: 1995a0146b0de1549a8289641cb81cf0
+      internalID: 1713363279
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WalkJago_0: -699015291
-      WalkJago_1: -1460488477
-      WalkJago_2: 2028726686
-      WalkJago_3: 61396576
-      WalkJago_4: -1469577499
-      WalkJago_5: 1661380740
-      WalkJago_6: -1624633192
-      WalkJago_7: 605668045
+      WalkShootJago_0: 1083361489
+      WalkShootJago_1: -1852233833
+      WalkShootJago_2: -1107371022
+      WalkShootJago_3: -871015587
+      WalkShootJago_4: 550142893
+      WalkShootJago_5: 681341984
+      WalkShootJago_6: -1533675043
+      WalkShootJago_7: 1713363279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

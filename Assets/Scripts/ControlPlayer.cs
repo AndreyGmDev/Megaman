@@ -19,9 +19,10 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
-        // Captura o movimento horizontal do jogador e Define a velocidade no Animator.
+        // Captura o movimento horizontal do jogador e Define as velocidades no Animator.
         xmov = Input.GetAxis("Horizontal");
         anima.SetFloat("Velocity", Mathf.Abs(xmov));
+        anima.SetFloat("HeightVelocity", Mathf.Abs(rdb.velocity.y));
 
         // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
@@ -73,7 +74,6 @@ public class ControlPlayer : MonoBehaviour
         // Faz um raycast para a direita para detectar paredes.
         RaycastHit2D hitright;
         hitright = Physics2D.Raycast(transform.position + transform.right * 0.45f, transform.right); ;
-        Debug.DrawLine(transform.position + transform.right * 0.45f, hitright.point);
         if (hitright)
         {
             if (hitright.distance < 0.03f && hit.distance > 0.3f)
@@ -116,6 +116,7 @@ public class ControlPlayer : MonoBehaviour
     {
         anima.SetBool("Side", true);
         rdb.gravityScale = 0.3f;
+
         /*jumpTimeSide = 6;
 
         if (doubleJump)

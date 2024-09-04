@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07cb9583c6374c74da7d625528b8235e
+guid: 041017967e70eab4a9d2b0293c2f29b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,32 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JumpJago_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 6
-        width: 38
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2d6821e250355a4395482e481388f75
-      internalID: -315215804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: JumpJago_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 6
+        x: 110
+        y: 10
         width: 37
         height: 45
       alignment: 0
@@ -145,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e71589ea24b779348b7dacfd42d9c742
-      internalID: -1755813544
+      spriteID: 0fe641d2fbd7d2d49a037727443f2aef
+      internalID: -1742147802
       vertices: []
       indices: 
       edges: []
@@ -155,28 +134,7 @@ TextureImporter:
       name: JumpJago_2
       rect:
         serializedVersion: 2
-        x: 101
-        y: 11
-        width: 36
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 395fb88c7f9b49e49878907f0db7a86e
-      internalID: 444887461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JumpJago_3
-      rect:
-        serializedVersion: 2
-        x: 151
+        x: 204
         y: 14
         width: 36
         height: 52
@@ -187,8 +145,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 438c052dfc4fe144d965d21fc5552def
-      internalID: 1357155990
+      spriteID: 4bc2e926d7233c74999843739e6910cf
+      internalID: 327663877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpJago_3
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 11
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a331ca0000366424cbebf9b93c4d4470
+      internalID: -2146977347
       vertices: []
       indices: 
       edges: []
@@ -197,7 +176,7 @@ TextureImporter:
       name: JumpJago_4
       rect:
         serializedVersion: 2
-        x: 203
+        x: 386
         y: 15
         width: 36
         height: 52
@@ -208,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8d3f3689c4f5b24280d6b456e30a1d4
-      internalID: -1155457445
+      spriteID: 04bf2a656ced9234d8824fd1091d0cd2
+      internalID: -1916883081
       vertices: []
       indices: 
       edges: []
@@ -218,7 +197,7 @@ TextureImporter:
       name: JumpJago_5
       rect:
         serializedVersion: 2
-        x: 252
+        x: 478
         y: 21
         width: 35
         height: 49
@@ -229,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c896440c456764fbaaf45815fa4878
-      internalID: 931882826
+      spriteID: bb1f8ce84766368488a9481b66b7fdbe
+      internalID: 1932574909
       vertices: []
       indices: 
       edges: []
@@ -239,7 +218,7 @@ TextureImporter:
       name: JumpJago_6
       rect:
         serializedVersion: 2
-        x: 294
+        x: 572
         y: 15
         width: 41
         height: 52
@@ -250,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddea04df7f387f04f9207346c8119cc4
-      internalID: -1196935591
+      spriteID: 66eb291795fa5674f82847e06e0fa11f
+      internalID: 704255954
       vertices: []
       indices: 
       edges: []
@@ -260,10 +239,10 @@ TextureImporter:
       name: JumpJago_7
       rect:
         serializedVersion: 2
-        x: 343
-        y: 10
+        x: 665
+        y: 11
         width: 41
-        height: 49
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92cd8cbab7e73f2459ebefc51554b81f
-      internalID: 253301366
+      spriteID: 32c09e32e45688540982c9d0aba83a8d
+      internalID: -745716197
       vertices: []
       indices: 
       edges: []
@@ -281,8 +260,8 @@ TextureImporter:
       name: JumpJago_8
       rect:
         serializedVersion: 2
-        x: 397
-        y: 6
+        x: 766
+        y: 10
         width: 42
         height: 45
       alignment: 0
@@ -292,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9931304f813324247bf194c872f1cd2f
-      internalID: 236384017
+      spriteID: 7be30e84fca46124eac76b99bdd28041
+      internalID: 1961750025
       vertices: []
       indices: 
       edges: []
@@ -309,15 +288,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JumpJago_0: -315215804
-      JumpJago_1: -1755813544
-      JumpJago_2: 444887461
-      JumpJago_3: 1357155990
-      JumpJago_4: -1155457445
-      JumpJago_5: 931882826
-      JumpJago_6: -1196935591
-      JumpJago_7: 253301366
-      JumpJago_8: 236384017
+      JumpJago_0: -2140032647
+      JumpJago_1: -1742147802
+      JumpJago_2: 327663877
+      JumpJago_3: -2146977347
+      JumpJago_4: -1916883081
+      JumpJago_5: 1932574909
+      JumpJago_6: 704255954
+      JumpJago_7: -745716197
+      JumpJago_8: 1961750025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
