@@ -11,7 +11,6 @@ public class ControlPlayer : MonoBehaviour
     bool jump, sideJump, jumpAgain; // Flags para controle de pulo e pulo duplo.
     float jumpTime, jumpTimeSide; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
-
     void Start()
     {
         // Método para inicializações. 
@@ -153,4 +152,31 @@ public class ControlPlayer : MonoBehaviour
     {
         fire.Emit(1);
     }
+
+    private void FrameToFrame(string initialState)
+    {
+        float frame = 0;
+        float frameRate = 4f; // taxa de quadros totais da animação
+
+        if (anima.GetCurrentAnimatorStateInfo(0).IsName("JumpUp"))
+        {
+            frame = anima.GetCurrentAnimatorStateInfo(0).normalizedTime;
+            frameRate = anima.GetCurrentAnimatorStateInfo(0).length;
+            print(frameRate);
+        }
+
+        if (Input.GetButton("Fire1"))
+        {            
+            // Calcular o próximo frame (normalizado)
+            // Supondo que sua animação tem 1 segundo e 30 frames (cada frame é 1/30 segundos)
+            // Caso o seu frame rate seja diferente, ajuste o cálculo de acordo
+            float frameDuration = 1f / frameRate; // Duração de cada frame
+            float nextFrameNormalized = Mathf.Clamp(frame + frameDuration, 0f, 1f);
+            print(frame);
+            print(nextFrameNormalized);
+            // Verificar se o botão de tiro foi pressionado
+            anima.SetFloat("Frames", nextFrameNormalized);
+        }
+    }
 }
+
