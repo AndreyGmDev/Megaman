@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 629a08e59b550c849ba665cf045ca96e
+guid: 805d7ac7169885b45a9fba46b59076f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleJago_0
+      name: ShootJago_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
+        x: 2
+        y: 2
         width: 38
         height: 45
       alignment: 0
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3106dcdbc2bc04b92f061d5f58abb1
-      internalID: 1336694495
+      spriteID: 168365ec0a2edc4439b9ad765ddc8c44
+      internalID: 100489959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleJago_1
+      name: ShootJago_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 3
+        x: 50
+        y: 2
         width: 38
         height: 45
       alignment: 0
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e4a6454ccc310a4c99b62f6624bd63d
-      internalID: -210399305
+      spriteID: da64cda61c8d89548a7ef5fd1e2e2c39
+      internalID: 497602721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleJago_2
+      name: ShootJago_2
       rect:
         serializedVersion: 2
-        x: 92
-        y: 3
-        width: 38
+        x: 103
+        y: 2
+        width: 39
         height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,92 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e111c2ec79ef4274a8bf87278311a35d
-      internalID: -155980717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleJago_3
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 3
-        width: 38
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b59d9a8f1b639fb418f2b1a5d7f3bc34
-      internalID: -536558698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleJago_4
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 3
-        width: 38
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efdf7f2253eef274f95b6bc41db4ddc2
-      internalID: -452515495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleJago_5
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 4
-        width: 37
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1048cce571874c9458a95c4694d1d813
-      internalID: 1835528866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleJago_6
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 4
-        width: 37
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be45baba4896864499bab5bce5c6adaa
-      internalID: 834626336
+      spriteID: 45a7f088ca6b45d4b8507a4518145af2
+      internalID: -1982506394
       vertices: []
       indices: 
       edges: []
@@ -267,13 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleJago_0: 1336694495
-      IdleJago_1: -210399305
-      IdleJago_2: -155980717
-      IdleJago_3: -536558698
-      IdleJago_4: -452515495
-      IdleJago_5: 1835528866
-      IdleJago_6: 834626336
+      ShootJago_0: 100489959
+      ShootJago_1: 497602721
+      ShootJago_2: -1982506394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

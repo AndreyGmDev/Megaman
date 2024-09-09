@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-
+        print("oi");
         StartCoroutine(Blink());
 
         lives--;

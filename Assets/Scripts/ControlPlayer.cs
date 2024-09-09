@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ControlPlayer : MonoBehaviour
@@ -7,7 +8,7 @@ public class ControlPlayer : MonoBehaviour
     public Animator anima; // Referência ao Animator do personagem.
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
-    bool jump, doubleJump, jumpAgain; // Flags para controle de pulo e pulo duplo.
+    bool jump, sideJump, jumpAgain; // Flags para controle de pulo e pulo duplo.
     float jumpTime, jumpTimeSide; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
 
@@ -24,9 +25,9 @@ public class ControlPlayer : MonoBehaviour
         anima.SetFloat("Velocity", Mathf.Abs(xmov));
         anima.SetFloat("HeightVelocity", Mathf.Abs(rdb.velocity.y));
         
-        // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
+        // Verifica se o botão de pulo foi pressionado, permitindo o pulo lateral.
         if (Input.GetButtonDown("Jump"))
-            doubleJump = true;
+            sideJump = true;
 
         if (Input.GetButtonUp("Jump"))
             jumpAgain = true;
@@ -39,7 +40,6 @@ public class ControlPlayer : MonoBehaviour
         else
         {
             jump = false;
-            doubleJump = false;
             jumpTime = 0;
             jumpTimeSide = 0;
         }
@@ -47,14 +47,11 @@ public class ControlPlayer : MonoBehaviour
         // Desativa o estado de "Fire" no Animator.
         anima.SetBool("Fire", false);
 
-        // Ativa o efeito de fogo e ativa o estado "Fire" no Animator quando o botão de fogo é pressionado.
+        // Chama a função Tiro
         if (Input.GetButtonDown("Fire1"))
-        {
-            fire.Emit(1);
-            anima.SetBool("Fire", true);
-        }
+            anima.SetBool("Fire", true); // ativa o estado "Fire" no Animator quando o botão de tiro é pressionado.
 
-        PhisicalReverser(); // Chama a função que inverte o personagem.
+        if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem.
     }
 
     void FixedUpdate()
@@ -68,7 +65,6 @@ public class ControlPlayer : MonoBehaviour
         if (hit)
         {
             anima.SetFloat("Height", hit.distance);
-            // if (jumpTimeSide < 0.1)
             JumpRoutine(hit); // Chama a rotina de pulo.
         }
 
@@ -76,19 +72,16 @@ public class ControlPlayer : MonoBehaviour
         RaycastHit2D hitright;
         hitright = Physics2D.Raycast(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), transform.right);
         Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
-        if (hitright)
+        if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f)
         {
-            if (hitright.distance < 0.03f && hit.distance > 0.3f)
-            {
-                JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
-            }
-            else
-            {
-                print(transform.rotation.x);
-                anima.SetBool("Side", false);
-                rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
-            }
+            JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
         }
+        else
+        {
+            anima.SetBool("Side", false);
+            rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
+        }
+            
     }
 
     // Rotina de pulo (parte física).
@@ -98,7 +91,7 @@ public class ControlPlayer : MonoBehaviour
         if (hit.distance < 0.1f)
         {
             jumpTime = 1;
-            doubleJump = false;
+            sideJump = false; // Proibe o pulo lateral se o player estiver saindo do chão.
         }
 
         if (jump)
@@ -124,21 +117,26 @@ public class ControlPlayer : MonoBehaviour
   
         jumpTimeSide = 6;
 
-        if (doubleJump)
+        if (sideJump) //CORRIJIR DEPOIS
         {
             jumpTimeSide = Mathf.Lerp(jumpTimeSide, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce((hitside.normal + Vector2.up) * jumpTimeSide, ForceMode2D.Impulse);
-            // if (rdb.velocity.y < 0)
-            doubleJump = false;
+            sideJump = false;
         }
     }
 
 
-    // Função para inverter a direção do personagem.
-    void PhisicalReverser()
+    // Função para inverter a rotação do personagem dependendo da direção do movimento.
+    void Direction()
     {
         if (rdb.velocity.x > 0.001) transform.rotation = Quaternion.Euler(0, 0, 0);
         if (rdb.velocity.x < -0.001) transform.rotation = Quaternion.Euler(0, 180, 0);
+    }
+
+    // Função para inverter a rotação do personagem de forma forçada.
+    void PhisicalReverser()
+    {
+        transform.rotation = Quaternion.Euler(0, (transform.rotation.eulerAngles.y + 180) % 360, 0);
     }
 
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
@@ -148,5 +146,11 @@ public class ControlPlayer : MonoBehaviour
         {
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
+    }
+
+    // Função do Tiro, chamado em um frame da animação de tiro
+    void Tiro()
+    {
+        fire.Emit(1);
     }
 }
