@@ -48,9 +48,13 @@ public class ControlPlayer : MonoBehaviour
 
         // Chama a função Tiro
         if (Input.GetButtonDown("Fire1"))
+        {
             anima.SetBool("Fire", true); // ativa o estado "Fire" no Animator quando o botão de tiro é pressionado.
+            fire.Emit(1);
+        }
+           
 
-        if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem.
+        if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
     }
 
     void FixedUpdate()
@@ -147,36 +151,11 @@ public class ControlPlayer : MonoBehaviour
         }
     }
 
-    // Função do Tiro, chamado em um frame da animação de tiro
-    void Tiro()
+    // Função é chamada pela animação de JumpShoot e Walk Shoot.
+    private void FrameToFrame()
     {
-        fire.Emit(1);
-    }
-
-    private void FrameToFrame(string initialState)
-    {
-        float frame = 0;
-        float frameRate = 4f; // taxa de quadros totais da animação
-
-        if (anima.GetCurrentAnimatorStateInfo(0).IsName("JumpUp"))
-        {
-            frame = anima.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            frameRate = anima.GetCurrentAnimatorStateInfo(0).length;
-            print(frameRate);
-        }
-
-        if (Input.GetButton("Fire1"))
-        {            
-            // Calcular o próximo frame (normalizado)
-            // Supondo que sua animação tem 1 segundo e 30 frames (cada frame é 1/30 segundos)
-            // Caso o seu frame rate seja diferente, ajuste o cálculo de acordo
-            float frameDuration = 1f / frameRate; // Duração de cada frame
-            float nextFrameNormalized = Mathf.Clamp(frame + frameDuration, 0f, 1f);
-            print(frame);
-            print(nextFrameNormalized);
-            // Verificar se o botão de tiro foi pressionado
-            anima.SetFloat("Frames", nextFrameNormalized);
-        }
+        float frame = anima.GetCurrentAnimatorStateInfo(0).normalizedTime; // Pega o frame atual da animação e normaliza.
+        anima.SetFloat("Frames", frame); // Seta o frame atual no novo estado.
     }
 }
 
