@@ -9,7 +9,7 @@ public class ControlPlayer : MonoBehaviour
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
     bool jump, sideJump, jumpAgain; // Flags para controle de pulo e pulo duplo.
-    float jumpTime, jumpTimeSide; // Controla a duração dos pulos.
+    float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
     void Start()
     {
@@ -53,7 +53,6 @@ public class ControlPlayer : MonoBehaviour
             fire.Emit(1);
         }
            
-
         if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
     }
 
@@ -84,7 +83,8 @@ public class ControlPlayer : MonoBehaviour
             anima.SetBool("Side", false);
             rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
         }
-            
+
+         if (hit.distance<0.1) JumpLoadRoutine();
     }
 
     // Rotina de pulo (parte física).
@@ -128,18 +128,22 @@ public class ControlPlayer : MonoBehaviour
         }
     }
 
+    private void JumpLoadRoutine()
+    {
+        if (Input.GetKey(KeyCode.LeftControl)) jumpTimeLoad += Time.fixedDeltaTime;
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {   
+            rdb.AddForce(Vector2.up * jumpTimeLoad, ForceMode2D.Impulse);
+        }
+        
+    }
+
 
     // Função para inverter a rotação do personagem dependendo da direção do movimento.
     void Direction()
     {
         if (rdb.velocity.x > 0.001) transform.rotation = Quaternion.Euler(0, 0, 0);
         if (rdb.velocity.x < -0.001) transform.rotation = Quaternion.Euler(0, 180, 0);
-    }
-
-    // Função para inverter a rotação do personagem de forma forçada.
-    void PhisicalReverser()
-    {
-        transform.rotation = Quaternion.Euler(0, (transform.rotation.eulerAngles.y + 180) % 360, 0);
     }
 
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".

@@ -2642,7 +2642,7 @@ GameObject:
   - component: {fileID: 1666773272}
   - component: {fileID: 1666773271}
   - component: {fileID: 1666773270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Machine 3
   m_TagString: Damage
   m_Icon: {fileID: 0}
