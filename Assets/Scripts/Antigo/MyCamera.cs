@@ -25,7 +25,7 @@ public class MyCamera : MonoBehaviour {
             {
                 transform.position = Vector3.Lerp(transform.position,
                    new Vector3(target.transform.position.x
-                   , target.transform.position.y + 2f + rdb.velocity.y/2 * advanceFactor
+                   , target.transform.position.y + 2f
                    , transform.position.z), Time.smoothDeltaTime);
 
             }

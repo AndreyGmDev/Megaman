@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlPlayer : MonoBehaviour
 {
     public Animator anima; // Referência ao Animator do personagem.
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
-    bool jump, sideJump, jumpAgain, jumpLoad, jumpLoadAgain; // Flags para controle de pulo e pulo duplo.
+    bool jump, sideJump, jumpAgain, jumpLoad; // Flags para controle de pulo e pulo duplo.
     float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
+    public Slider jumpBoost;
     void Start()
     {
         // Método para inicializações. 
-        jumpAgain  = true;
-        jumpLoadAgain = true;
+        jumpAgain  = true; 
     }
 
     void Update()
@@ -44,19 +46,21 @@ public class ControlPlayer : MonoBehaviour
             jumpTimeSide = 0;
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && jumpLoadAgain)
+        // Controla o carregamento do JumpTimeLoad e sua visualização no cenário.
+        if (Input.GetKey(KeyCode.LeftControl)) // Permite Carregar o JumpTimeLoad.
             jumpLoad = true;
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl)) // Proíbe Carregar o JumpTimeLoad.
             jumpLoad = false;
+        jumpBoost.value = jumpTimeLoad/3; // Configula o valor do JumpBoost no slider proporcional ao valor do JumpTimeLoad.
 
         // Desativa o estado de "Fire" no Animator.
         anima.SetBool("Fire", false);
 
-        // Chama a função Tiro
+        // // Cria a particula de tiro e ativa o estado "Fire" no Animator quando o botão de tiro é pressionado.
         if (Input.GetButtonDown("Fire1"))
         {
-            anima.SetBool("Fire", true); // ativa o estado "Fire" no Animator quando o botão de tiro é pressionado.
-            fire.Emit(1);
+            anima.SetBool("Fire", true); 
+            if(!anima.GetBool("Side")) fire.Emit(1); // Condições para o player conseguir atirar.
         }
            
         if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
@@ -82,7 +86,7 @@ public class ControlPlayer : MonoBehaviour
         Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
         if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f) 
         {
-            JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
+            JumpRoutineSide(hitright, hit); // Chama a rotina de pulo lateral.
         }
         else
         {
@@ -90,7 +94,7 @@ public class ControlPlayer : MonoBehaviour
             rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
         }
 
-         JumpLoadRoutine(); // Chama a rotina do jump boost.
+        JumpLoadRoutine(hit); // Chama a rotina do jump boost.
     }
 
     // Rotina de jump.
@@ -98,16 +102,7 @@ public class ControlPlayer : MonoBehaviour
     {
         // Verifica a distância do chão e aplica uma força de pulo se necessário.
         if (hit.distance < 0.1f)
-        {
             jumpTime = 1;
-            sideJump = false; // Proibe o pulo lateral no JumpRoutineSide() se o player estiver saindo do chão.
-            jumpLoadAgain = true; // Permite carregar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no chão.
-            if(Input.GetButton("Jump")) jumpTimeLoad = 0; // Proibe soltar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no ar.
-        }
-        else
-        {
-            jumpLoadAgain = false; // Proibe carregar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no ar.
-        }
 
         if (jump)
         {
@@ -122,9 +117,13 @@ public class ControlPlayer : MonoBehaviour
     }
 
     // Rotina de side jump.
-    private void JumpRoutineSide(RaycastHit2D hitside)
+    private void JumpRoutineSide(RaycastHit2D hitside, RaycastHit2D hit)
     {
-        if(Mathf.Abs(xmov)>0) anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
+        // Proibe o pulo lateral no JumpRoutineSide() se o player estiver saindo do chão.
+        if (hit.distance < 0.1f)
+            sideJump = false;
+
+        if (Mathf.Abs(xmov)>0) anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
 
         // Deixa a velocidade de queda do player mais lenta quando o player desce segurando na parede.
         if (rdb.velocity.y<0 && Mathf.Abs(xmov)>0) 
@@ -141,11 +140,17 @@ public class ControlPlayer : MonoBehaviour
     }
 
     // Rotina de jump boost.
-    private void JumpLoadRoutine()
+    private void JumpLoadRoutine(RaycastHit2D hit)
     {
         if (jumpLoad)
         {
-            if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * 1.5f;
+            if (hit.distance < 0.1) // Carrega o jumpBoost se o player estiver no chão.
+            {
+                if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * 1.5f;
+                else jumpTimeLoad = 3;
+            }
+            else
+                jumpTimeLoad = 0; // Descarrega o JumpBoost se o personagem sair do chão.
         }
         else
         {
@@ -160,6 +165,7 @@ public class ControlPlayer : MonoBehaviour
     {
         if (rdb.velocity.x > 0.001) transform.rotation = Quaternion.Euler(0, 0, 0);
         if (rdb.velocity.x < -0.001) transform.rotation = Quaternion.Euler(0, 180, 0);
+        
     }
 
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
