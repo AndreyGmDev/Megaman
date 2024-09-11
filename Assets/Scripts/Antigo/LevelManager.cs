@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour {
 
         if (playerinstance)
         {
-            if(playerinstance.transform.position.y < mycamera.transform.position.y-6)
+            if(playerinstance.transform.position.y < mycamera.transform.position.y-12)
             {
                 Destroy(playerinstance);
             }

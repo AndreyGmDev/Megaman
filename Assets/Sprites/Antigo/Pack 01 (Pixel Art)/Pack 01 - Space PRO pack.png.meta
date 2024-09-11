@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -79,7 +79,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -92,7 +92,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
@@ -131,10 +131,1207 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baa40156644a2c4b978192939056abf
+      internalID: 152440202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5efa11001763f43a56503ae2aeec70
+      internalID: 2033157795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_2
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927971cd20d38f4458320623b9914a5c
+      internalID: -854945203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_3
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5535a1106f264984fa08eec10ac48c7e
+      internalID: -244146076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_4
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a80820c4ecf1d4a8f532a841da6900
+      internalID: -93168321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_5
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca225073a411bd947bec7a8c365f645c
+      internalID: -287391018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_6
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c74bab7dcffa6f45a1eef4056583a5d
+      internalID: 1348157905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_7
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 896
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16c378fccedb9b48ad772d043473fba
+      internalID: -698893854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80d0d355bc6b444c80e6f31bc36f98e
+      internalID: 90442638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_9
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b567b0379c4ba14a94a7a9ae5ec7cd3
+      internalID: 1036489030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_10
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adf91e39fc0de344810b1a207835648
+      internalID: -1436827755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf7d78511c2be9498fbf0b5aac1c0ff
+      internalID: -101855319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_12
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8167ad4f52398594a905baf73eec9f08
+      internalID: -1701921948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_13
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d1e471a58a22747bc99833238d51bb
+      internalID: 43878092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_14
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb9b041ebca0ce448be47946a59dc21
+      internalID: 543043717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_15
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 772
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b72fcac4e710cb4b9792b68166fe816
+      internalID: 572888778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0c7b31354a4e04b9d72c7b37f2fd6c
+      internalID: 810945462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_17
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8060f0b264e3f964db695147052bdacc
+      internalID: 7857983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_18
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecd8466a9efac9418f008e6c4ee7a92
+      internalID: -203586769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_19
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b52cc5a04de7249852815e720e123c
+      internalID: -1630099320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_20
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6a28ac5cfa58f4d9686d855605ab6a
+      internalID: 739133267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_21
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212de3f081d162f408a6ed7c9f9fd768
+      internalID: -1178729541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_22
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c180ef7a2d320e4d9421409646d5cef
+      internalID: 740359695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_23
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 648
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8958f1de759c3e4f9eb10b67505b8e5
+      internalID: -2008857354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ea190324412cc45bd8414c3c376e09
+      internalID: -1093309306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_25
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac011d31ebb3bc4685650764961c25b
+      internalID: 1456824057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_26
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695395049b711db4d87a4ca18b01e143
+      internalID: -1939513658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_27
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9345605a80f9054b8557ac616d5721f
+      internalID: 1119729559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_28
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97af857c64122984bacc82b385b97680
+      internalID: -1364090396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_29
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0cea2928887bb46a8a1b7738af7d5b
+      internalID: 1550453334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_30
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4077338f794ee92498917f95dd56f67f
+      internalID: -1167640277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_31
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 524
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6c2109dcc15b147ba37e2ab2161b49
+      internalID: -1729459695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b817a85827f36e54a968df2451f3fd38
+      internalID: 1331401842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_33
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3073fe0b5e6cba7448d834832edc34d9
+      internalID: -705856604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_34
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb56249208cd00c44b9bdf26caf10d2b
+      internalID: -1913605058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_35
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e72f54eabb2a9e4cbbbeb575567bcd0
+      internalID: -814980172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_36
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8727cc97df073c74087aad3a30ba0f9a
+      internalID: 1957982894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_37
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7c02333ac409c468371b5f796dc54b
+      internalID: 938597997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_38
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edabf8c589dbcdc4db9bf6c99cf6c893
+      internalID: -1761642250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_39
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 400
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27647e54b460bc544a1de1c96bb96c6d
+      internalID: -71903069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c65a4ca88d6314a8efbba522ebc153
+      internalID: -1037329887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_41
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d588f9094efd78a4ab8189a41a833c55
+      internalID: -1434124026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_42
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0306a2babe8e92641b3ec30469eceedc
+      internalID: -1234515840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_43
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c709b42797a5a84c853df7c134f998d
+      internalID: 1125253723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_44
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415884bb7ea243d49b493c875cfc3735
+      internalID: -566776989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_45
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4b6a57f51920245bdabbf790e4da93
+      internalID: 1848000228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_46
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5cbe58954efc3438a2cac74c439ad7
+      internalID: -499064740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_47
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 276
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451b0521f896e5e49af6dde644bb2c7e
+      internalID: -1490627990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3103919beb8c70e41999ffa124f6b54e
+      internalID: 1811123094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_49
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821a7946b30f4534faefbd7866c80ffc
+      internalID: 1730158910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_50
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603df4388bbd5b74498faf4c8db4a198
+      internalID: 1638233402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_51
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73385c8bb065ac740be59282fb23040a
+      internalID: -1190977137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_52
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9273cda7de64a48bc165e9b1e22657
+      internalID: 1601507646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_53
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 152
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b74a06b1a3fde4f8c36560ca0d6e14
+      internalID: 909811067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac56231cccd86af4d80552c5e0242e66
+      internalID: -980807951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_55
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 28
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448daf63da490664aaa498a5d8cb90c5
+      internalID: -275649682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pack 01 - Space PRO pack_56
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 28
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8ebed57013f1a4fbe2f968d088754d
+      internalID: 318390569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +1342,64 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pack 01 - Space PRO pack_0: 152440202
+      Pack 01 - Space PRO pack_1: 2033157795
+      Pack 01 - Space PRO pack_10: -1436827755
+      Pack 01 - Space PRO pack_11: -101855319
+      Pack 01 - Space PRO pack_12: -1701921948
+      Pack 01 - Space PRO pack_13: 43878092
+      Pack 01 - Space PRO pack_14: 543043717
+      Pack 01 - Space PRO pack_15: 572888778
+      Pack 01 - Space PRO pack_16: 810945462
+      Pack 01 - Space PRO pack_17: 7857983
+      Pack 01 - Space PRO pack_18: -203586769
+      Pack 01 - Space PRO pack_19: -1630099320
+      Pack 01 - Space PRO pack_2: -854945203
+      Pack 01 - Space PRO pack_20: 739133267
+      Pack 01 - Space PRO pack_21: -1178729541
+      Pack 01 - Space PRO pack_22: 740359695
+      Pack 01 - Space PRO pack_23: -2008857354
+      Pack 01 - Space PRO pack_24: -1093309306
+      Pack 01 - Space PRO pack_25: 1456824057
+      Pack 01 - Space PRO pack_26: -1939513658
+      Pack 01 - Space PRO pack_27: 1119729559
+      Pack 01 - Space PRO pack_28: -1364090396
+      Pack 01 - Space PRO pack_29: 1550453334
+      Pack 01 - Space PRO pack_3: -244146076
+      Pack 01 - Space PRO pack_30: -1167640277
+      Pack 01 - Space PRO pack_31: -1729459695
+      Pack 01 - Space PRO pack_32: 1331401842
+      Pack 01 - Space PRO pack_33: -705856604
+      Pack 01 - Space PRO pack_34: -1913605058
+      Pack 01 - Space PRO pack_35: -814980172
+      Pack 01 - Space PRO pack_36: 1957982894
+      Pack 01 - Space PRO pack_37: 938597997
+      Pack 01 - Space PRO pack_38: -1761642250
+      Pack 01 - Space PRO pack_39: -71903069
+      Pack 01 - Space PRO pack_4: -93168321
+      Pack 01 - Space PRO pack_40: -1037329887
+      Pack 01 - Space PRO pack_41: -1434124026
+      Pack 01 - Space PRO pack_42: -1234515840
+      Pack 01 - Space PRO pack_43: 1125253723
+      Pack 01 - Space PRO pack_44: -566776989
+      Pack 01 - Space PRO pack_45: 1848000228
+      Pack 01 - Space PRO pack_46: -499064740
+      Pack 01 - Space PRO pack_47: -1490627990
+      Pack 01 - Space PRO pack_48: 1811123094
+      Pack 01 - Space PRO pack_49: 1730158910
+      Pack 01 - Space PRO pack_5: -287391018
+      Pack 01 - Space PRO pack_50: 1638233402
+      Pack 01 - Space PRO pack_51: -1190977137
+      Pack 01 - Space PRO pack_52: 1601507646
+      Pack 01 - Space PRO pack_53: 909811067
+      Pack 01 - Space PRO pack_54: -980807951
+      Pack 01 - Space PRO pack_55: -275649682
+      Pack 01 - Space PRO pack_56: 318390569
+      Pack 01 - Space PRO pack_6: 1348157905
+      Pack 01 - Space PRO pack_7: -698893854
+      Pack 01 - Space PRO pack_8: 90442638
+      Pack 01 - Space PRO pack_9: 1036489030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

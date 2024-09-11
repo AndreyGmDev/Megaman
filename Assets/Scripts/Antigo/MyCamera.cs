@@ -18,14 +18,14 @@ public class MyCamera : MonoBehaviour {
                 transform.position = Vector3.Lerp(transform.position,
                     new Vector3(target.transform.position.x +
                     rdb.velocity.x * advanceFactor
-                    , target.transform.position.y
+                    , target.transform.position.y + 2f + rdb.velocity.y/2f * advanceFactor
                     , transform.position.z), Time.smoothDeltaTime);
             }
             else
             {
                 transform.position = Vector3.Lerp(transform.position,
                    new Vector3(target.transform.position.x
-                   , target.transform.position.y
+                   , target.transform.position.y + 2f + rdb.velocity.y/2 * advanceFactor
                    , transform.position.z), Time.smoothDeltaTime);
 
             }

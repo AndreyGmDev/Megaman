@@ -8,13 +8,14 @@ public class ControlPlayer : MonoBehaviour
     public Animator anima; // Referência ao Animator do personagem.
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
-    bool jump, sideJump, jumpAgain; // Flags para controle de pulo e pulo duplo.
+    bool jump, sideJump, jumpAgain, jumpLoad, jumpLoadAgain; // Flags para controle de pulo e pulo duplo.
     float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
     void Start()
     {
         // Método para inicializações. 
-        jumpAgain = true;
+        jumpAgain  = true;
+        jumpLoadAgain = true;
     }
 
     void Update()
@@ -42,6 +43,11 @@ public class ControlPlayer : MonoBehaviour
             jumpTime = 0;
             jumpTimeSide = 0;
         }
+
+        if (Input.GetKey(KeyCode.LeftControl) && jumpLoadAgain)
+            jumpLoad = true;
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+            jumpLoad = false;
 
         // Desativa o estado de "Fire" no Animator.
         anima.SetBool("Fire", false);
@@ -74,7 +80,7 @@ public class ControlPlayer : MonoBehaviour
         RaycastHit2D hitright;
         hitright = Physics2D.Raycast(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), transform.right);
         Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
-        if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f)
+        if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f) 
         {
             JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
         }
@@ -84,17 +90,23 @@ public class ControlPlayer : MonoBehaviour
             rdb.gravityScale = 1f; // Volta a velocidade de queda do player para o padrão quando o player não está segurando na parede.
         }
 
-         if (hit.distance<0.1) JumpLoadRoutine();
+         JumpLoadRoutine(); // Chama a rotina do jump boost.
     }
 
-    // Rotina de pulo (parte física).
+    // Rotina de jump.
     private void JumpRoutine(RaycastHit2D hit)
     {
         // Verifica a distância do chão e aplica uma força de pulo se necessário.
         if (hit.distance < 0.1f)
         {
             jumpTime = 1;
-            sideJump = false; // Proibe o pulo lateral se o player estiver saindo do chão.
+            sideJump = false; // Proibe o pulo lateral no JumpRoutineSide() se o player estiver saindo do chão.
+            jumpLoadAgain = true; // Permite carregar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no chão.
+            if(Input.GetButton("Jump")) jumpTimeLoad = 0; // Proibe soltar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no ar.
+        }
+        else
+        {
+            jumpLoadAgain = false; // Proibe carregar o jumpTimeLoad no JumpLoadRoutine() enquanto o player estiver no ar.
         }
 
         if (jump)
@@ -109,33 +121,37 @@ public class ControlPlayer : MonoBehaviour
 
     }
 
-    // Rotina de pulo lateral.
+    // Rotina de side jump.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
-        anima.SetBool("Side", true);
+        if(Mathf.Abs(xmov)>0) anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
 
         // Deixa a velocidade de queda do player mais lenta quando o player desce segurando na parede.
         if (rdb.velocity.y<0 && Mathf.Abs(xmov)>0) 
             rdb.gravityScale = 0.3f; 
   
-        jumpTimeSide = 6;
+        jumpTimeSide = 4.8f;
 
-        if (sideJump) //CORRIJIR DEPOIS
+        // Verifica se está ocorrendo pode usar o side jump e se a animação de side está ocorrendo e aplica uma força de pulo se necessário.
+        if (sideJump && anima.GetBool("Side")==true)
         {
-            jumpTimeSide = Mathf.Lerp(jumpTimeSide, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce((hitside.normal + Vector2.up) * jumpTimeSide, ForceMode2D.Impulse);
-            sideJump = false;
+            sideJump = false; // Impedir de pular de parede em parede segurando o espaço.
         }
     }
 
+    // Rotina de jump boost.
     private void JumpLoadRoutine()
     {
-        if (Input.GetKey(KeyCode.LeftControl)) jumpTimeLoad += Time.fixedDeltaTime;
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {   
+        if (jumpLoad)
+        {
+            if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * 1.5f;
+        }
+        else
+        {
+            jumpTimeLoad = Mathf.Lerp(jumpTimeLoad, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce(Vector2.up * jumpTimeLoad, ForceMode2D.Impulse);
         }
-        
     }
 
 
