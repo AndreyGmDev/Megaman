@@ -14,6 +14,7 @@ public class ControlPlayer : MonoBehaviour
     float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
     public Slider jumpBoost;
+    public Animation sword;
     void Start()
     {
         // Método para inicializações. 
@@ -22,8 +23,11 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.N))
+            anima.Play("Sword");
+
         // Captura o movimento horizontal do jogador e Define as velocidades no Animator.
-        xmov = Input.GetAxis("Horizontal");
+        xmov = Input.GetAxis("Horizontal"); print(xmov);
         anima.SetFloat("Velocity", Mathf.Abs(xmov));
         anima.SetFloat("HeightVelocity", Mathf.Abs(rdb.velocity.y));
         
@@ -86,7 +90,7 @@ public class ControlPlayer : MonoBehaviour
         Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
         if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f) 
         {
-            JumpRoutineSide(hitright, hit); // Chama a rotina de pulo lateral.
+            JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
         }
         else
         {
@@ -102,7 +106,10 @@ public class ControlPlayer : MonoBehaviour
     {
         // Verifica a distância do chão e aplica uma força de pulo se necessário.
         if (hit.distance < 0.1f)
+        {
             jumpTime = 1;
+            sideJump = false; // Proibe o pulo lateral no JumpRoutineSide() se o player estiver saindo do chão.
+        }
 
         if (jump)
         {
@@ -117,11 +124,8 @@ public class ControlPlayer : MonoBehaviour
     }
 
     // Rotina de side jump.
-    private void JumpRoutineSide(RaycastHit2D hitside, RaycastHit2D hit)
+    private void JumpRoutineSide(RaycastHit2D hitside)
     {
-        // Proibe o pulo lateral no JumpRoutineSide() se o player estiver saindo do chão.
-        if (hit.distance < 0.1f)
-            sideJump = false;
 
         if (Mathf.Abs(xmov)>0) anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
 
@@ -144,7 +148,7 @@ public class ControlPlayer : MonoBehaviour
     {
         if (jumpLoad)
         {
-            if (hit.distance < 0.1) // Carrega o jumpBoost se o player estiver no chão.
+            if (hit.distance < 0.01) // Carrega o jumpBoost se o player estiver no chão.
             {
                 if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * 1.5f;
                 else jumpTimeLoad = 3;
