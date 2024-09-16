@@ -27,7 +27,7 @@ public class ControlPlayer : MonoBehaviour
             anima.Play("Sword");
 
         // Captura o movimento horizontal do jogador e Define as velocidades no Animator.
-        xmov = Input.GetAxis("Horizontal"); print(xmov);
+        xmov = Input.GetAxis("Horizontal");
         anima.SetFloat("Velocity", Mathf.Abs(xmov));
         anima.SetFloat("HeightVelocity", Mathf.Abs(rdb.velocity.y));
         
