@@ -66,7 +66,14 @@ public class ControlPlayer : MonoBehaviour
             anima.SetBool("Fire", true); 
             if(!anima.GetBool("Side")) fire.Emit(1); // Condições para o player conseguir atirar.
         }
-           
+        
+        anima.SetBool("SwordAttack", false);
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (!anima.GetBool("Side")) anima.Play("SwordAttack");
+        }
+
         if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
     }
 
