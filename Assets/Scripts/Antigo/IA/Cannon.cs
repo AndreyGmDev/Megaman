@@ -50,7 +50,7 @@ public class Cannon : MonoBehaviour
 
     void Aim()
     {
-        Vector3 dif = target.transform.position+Vector3.up - transform.position;
+        Vector3 dif = (target.transform.position+Vector3.up*0.7f - transform.position).normalized;
         //cannon.transform.up = -dif;
         float value = Vector3.Dot(dif, cannon.transform.right);
         cannon.transform.Rotate(0, 0, value);

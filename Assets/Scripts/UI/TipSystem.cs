@@ -9,7 +9,7 @@ public class TipSystem : MonoBehaviour
     private string[] tips = {
         "If you want to jump, use the 'Space' button.",
         "You're Jago, an extraordinary ninja.",
-        "Use 'LMB' to shoot Shurikens.",
+        "Hold 'LCtrl' to use Jump Boost.",
         "Beware of your surroudings!",
         "You can wall jump by pressing 'Space' on the nearest wall."
     };
