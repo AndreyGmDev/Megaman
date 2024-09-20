@@ -187,6 +187,14 @@ public class ControlPlayer : MonoBehaviour
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
     }
+    // Detecção de colisão com partículas marcados com a tag "Damage" ou "Enemy".
+    void OnParticleCollision(GameObject collision)
+    {
+        if (collision.gameObject.CompareTag("Damage") || collision.gameObject.CompareTag("Enemy"))
+        {
+            LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
+        }
+    }
 
     // Função é chamada pela animação de JumpShoot e Walk Shoot.
     private void FrameToFrame()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40effed476624ad42a661220a3cff0b0
+guid: e6054479e752934469b38eae9b6f06fc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,32 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,106 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShootCone_0
+      name: TriggerDrone_4
       rect:
         serializedVersion: 2
-        x: 437
-        y: 36
+        x: 34
+        y: 24
         width: 21
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.359375}
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed2830073b684934e8031850b89ee146
-      internalID: 2139688568
+      spriteID: 48d82bb4fe38dc64f9c9306e08641379
+      internalID: -904218880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootCone_1
+      name: TriggerDrone_3
       rect:
         serializedVersion: 2
-        x: 337
-        y: 36
+        x: 57
+        y: 24
         width: 21
-        height: 30
-      alignment: 9
-      pivot: {x: 0.5, y: 0.38333333}
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 436d9b6161aea0347a2c04a8c8e2c73c
-      internalID: 1796628677
+      spriteID: cfe5cc1ac3671b241868d0bbf1ea408f
+      internalID: -1885545374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootCone_3
+      name: TriggerDrone_2
       rect:
         serializedVersion: 2
-        x: 137
-        y: 36
+        x: 80
+        y: 24
         width: 21
-        height: 30
-      alignment: 9
-      pivot: {x: 0.5, y: 0.38333333}
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8261763ec2cc15418f3e53c3c093036
-      internalID: -1036164303
+      spriteID: 7f4c2ccb579af3742bcae933bedb14e7
+      internalID: -1723510737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootCone_4
+      name: TriggerDrone_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 36
+        x: 103
+        y: 24
         width: 21
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.359375}
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06e28fbce573ba54683d4bed2f11e5a1
-      internalID: 680254546
+      spriteID: 144ed0c2b9cb11a489c63c6bbe96a65f
+      internalID: 1134374373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootCone_2
+      name: TriggerDrone_0
       rect:
         serializedVersion: 2
-        x: 237
-        y: 36
+        x: 126
+        y: 24
         width: 21
-        height: 30
-      alignment: 9
-      pivot: {x: 0.5, y: 0.38333333}
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda1851d1617f3f47b79fe9b2a06c79f
-      internalID: 1782272740
+      spriteID: 18cc696629f89d546bddd9bdf215fa87
+      internalID: 1774878798
       vertices: []
       indices: 
       edges: []
@@ -251,11 +225,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ShootCone_0: 2139688568
-      ShootCone_1: 1796628677
-      ShootCone_2: 1782272740
-      ShootCone_3: -1036164303
-      ShootCone_4: 680254546
+      TriggerDrone_0: 1774878798
+      TriggerDrone_1: 1134374373
+      TriggerDrone_2: -1723510737
+      TriggerDrone_3: -1885545374
+      TriggerDrone_4: -904218880
+      TriggerDrone_5: 1375689236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
