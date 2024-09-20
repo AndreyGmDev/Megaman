@@ -9756,6 +9756,7 @@ GameObject:
   - component: {fileID: 6699874114929854971}
   - component: {fileID: 2986716615231256150}
   - component: {fileID: 7389875974440691056}
+  - component: {fileID: 5609984309783627769}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -9771,14 +9772,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6353024129510380935}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9.47, y: 0.66, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 917982917094957275}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &3914020116817936495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9921,5 +9922,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6699874114929854971}
   shoot: {fileID: 7592706395318146588}
-  life: 5
   delay: 0.1
+--- !u!114 &5609984309783627769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353024129510380935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebba1056da94fef47a0ffa3175f3eef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 8
+  smoke: {fileID: 2006679684889494683, guid: 6a70ae007b05a7944897573e3578c3a2, type: 3}
+  explosion: {fileID: 8404128881088415328, guid: 0fdc7c5c3e2f4f04a86ee7851d1911a1,
+    type: 3}
+  smokePosition: {x: 0, y: 0.68, z: 0}

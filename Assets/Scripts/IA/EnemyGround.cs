@@ -6,7 +6,6 @@ public class EnemyGround : MonoBehaviour
 {
     public Animator anim;
     public ParticleSystem shoot;
-    [SerializeField] int life;
     [SerializeField] float delay;
     float countDelay;
     bool attack;
@@ -60,17 +59,5 @@ public class EnemyGround : MonoBehaviour
         attack = false;
         countDelay = delay;
         anim.SetBool("Attack",false);
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.CompareTag("BulletPlayer"))
-        {
-            life--;
-        }
-        if (life <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }

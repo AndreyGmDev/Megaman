@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6270088090307671872}
   - component: {fileID: 2621791979843092460}
-  - component: {fileID: 5854839791608707266}
   - component: {fileID: 2883052046915312468}
   - component: {fileID: 4520768002235865908}
+  - component: {fileID: 5092801111965431318}
+  - component: {fileID: 4301287782772452314}
   - component: {fileID: 3801017013095451930}
+  - component: {fileID: 5854839791608707266}
+  - component: {fileID: 710811742575619943}
   m_Layer: 2
   m_Name: Drone
   m_TagString: Untagged
@@ -90,25 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5854839791608707266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22023187995006716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105df95205b75864c970c8e8ee7949dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2883052046915312468}
-  shoot: {fileID: 2036907760019505766}
-  shootSprite: {fileID: 982741547095986547}
-  rdb: {fileID: 3801017013095451930}
-  colliderTrigger: {fileID: 0}
-  colliderDamage: {fileID: 0}
-  delay: 1.5
 --- !u!95 &2883052046915312468
 Animator:
   serializedVersion: 5
@@ -165,6 +149,76 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!70 &5092801111965431318
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22023187995006716}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 311
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0009435813, y: 0.034133613}
+  m_Size: {x: 0.20128489, y: 0.31904584}
+  m_Direction: 0
+--- !u!58 &4301287782772452314
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22023187995006716}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00035491586, y: 0.008696457}
+  serializedVersion: 2
+  m_Radius: 0.09322568
 --- !u!50 &3801017013095451930
 Rigidbody2D:
   serializedVersion: 4
@@ -191,7 +245,43 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &5854839791608707266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22023187995006716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105df95205b75864c970c8e8ee7949dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2883052046915312468}
+  shoot: {fileID: 2036907760019505766}
+  shootSprite: {fileID: 982741547095986547}
+  rdb: {fileID: 3801017013095451930}
+  colliderTrigger: {fileID: 4520768002235865908}
+  colliderDamage: {fileID: 4301287782772452314}
+  delay: 1.5
+--- !u!114 &710811742575619943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22023187995006716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebba1056da94fef47a0ffa3175f3eef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 4
+  smoke: {fileID: 2006679684889494683, guid: 6a70ae007b05a7944897573e3578c3a2, type: 3}
+  explosion: {fileID: 8404128881088415328, guid: 0fdc7c5c3e2f4f04a86ee7851d1911a1,
+    type: 3}
+  smokePosition: {x: 0, y: 0.6, z: 0}
 --- !u!1 &999425117561563492
 GameObject:
   m_ObjectHideFlags: 0

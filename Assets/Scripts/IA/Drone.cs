@@ -19,7 +19,7 @@ public class Drone : MonoBehaviour
 
     void Start()
     {
-        startPostion = transform.position; 
+        startPostion = transform.position;
     }
     void Update()
     {
@@ -29,7 +29,8 @@ public class Drone : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (anim.GetBool("SawPlayer")) Move();
+        if (anim.GetBool("SawPlayer")) Move(); // Move o Drone em direção ao Player, caso o Player entre em sua área.
+        else transform.position += (startPostion - transform.position) * Time.fixedDeltaTime; // Volta o Drone para posição inicial, caso o Player saia de sua área ou morra.
     }
 
     void ShootDelay()
