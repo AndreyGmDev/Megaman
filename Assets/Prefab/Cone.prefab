@@ -9759,7 +9759,7 @@ GameObject:
   - component: {fileID: 5609984309783627769}
   m_Layer: 0
   m_Name: Cone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9940,3 +9940,5 @@ MonoBehaviour:
   explosion: {fileID: 8404128881088415328, guid: 0fdc7c5c3e2f4f04a86ee7851d1911a1,
     type: 3}
   smokePosition: {x: 0, y: 0.68, z: 0}
+  colliderDamage: {fileID: 2986716615231256150}
+  Player: {fileID: 5974503362737771284, guid: 3341115707461c647ae2d512af141739, type: 3}

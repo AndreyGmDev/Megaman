@@ -8,7 +8,7 @@ public class Drone : MonoBehaviour
     public ParticleSystem shoot;
     public SpriteRenderer shootSprite;
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do Drone.
-    public Collider2D colliderTrigger, colliderDamage;
+    public Collider2D colliderTrigger;
     GameObject targetPlayer;// Referência ao GameObject do Player.
     
     [SerializeField] float delay;

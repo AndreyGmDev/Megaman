@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public class DamageAntigo : MonoBehaviour
 {
     [SerializeField]
     private int lives = 4;
@@ -13,9 +13,7 @@ public class Damage : MonoBehaviour
     ParticleSystem smoke;
     [SerializeField]
     ParticleSystem explosion;
-    [SerializeField] Vector3 smokePosition;
-    public Collider2D colliderDamage;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,23 +28,16 @@ public class Damage : MonoBehaviour
 
     private void OnParticleCollision(GameObject particle)
     {
-        // Caso a particula com a Tag BulletPlayer acerte o Inimigo a função CallDamage é chamada.
-        if (particle.CompareTag("BulletPlayer")) CallDamage(2);
+        if (particle.CompareTag("BulletPlayer")) CallDamage();
     }
 
-    public void DamageSword()
-    {
-        // Caso o Inimigo estiver dentro da area de alcance da espada a função CallDamage é chamada.
-        CallDamage(4);
-
-    }
 
     // Função que causa dano ao Inimigo.
-    void CallDamage(int damage)
+    void CallDamage()
     {
         StartCoroutine(Blink());
 
-        lives -= damage;
+        lives --;
         if (lives < initiallives / 2)
         {
             CreateandPlay(smoke);
@@ -74,7 +65,7 @@ public class Damage : MonoBehaviour
     {
         if (particle)
         {
-            GameObject ob = Instantiate(particle.gameObject, transform.position + smokePosition, Quaternion.identity);
+            GameObject ob = Instantiate(particle.gameObject, transform.position, Quaternion.identity);
             ob.transform.parent = gameObject.transform;
             ob.GetComponent<ParticleSystem>().Play();
         }

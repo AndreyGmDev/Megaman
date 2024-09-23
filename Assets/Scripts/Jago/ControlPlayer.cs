@@ -14,7 +14,7 @@ public class ControlPlayer : MonoBehaviour
     float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
     public Slider jumpBoost;
-    public Animation sword;
+
     void Start()
     {
         // Método para inicializações. 
@@ -75,6 +75,7 @@ public class ControlPlayer : MonoBehaviour
         }
 
         if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
+
     }
 
     void FixedUpdate()
@@ -133,12 +134,13 @@ public class ControlPlayer : MonoBehaviour
     // Rotina de side jump.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
+        // if (Mathf.Abs(xmov)>0) anima.SetBool("Side", true); 
 
-        if (Mathf.Abs(xmov)>0) anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
-
-        // Deixa a velocidade de queda do player mais lenta quando o player desce segurando na parede.
-        if (rdb.velocity.y<0 && Mathf.Abs(xmov)>0) 
-            rdb.gravityScale = 0.3f; 
+        if (rdb.velocity.y < 0 && Mathf.Abs(xmov) > 0)
+        {
+            anima.SetBool("Side", true); // Permite a animação de Side se o player estiver em movimento olhando para parede.
+            rdb.gravityScale = 0.3f; // Deixa a velocidade de queda do player mais lenta quando o player desce segurando na parede.
+        } 
   
         jumpTimeSide = 4.8f;
 
@@ -182,7 +184,7 @@ public class ControlPlayer : MonoBehaviour
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Damage") || collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Damage"))
         {
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
@@ -190,7 +192,7 @@ public class ControlPlayer : MonoBehaviour
     // Detecção de colisão com partículas marcados com a tag "Damage" ou "Enemy".
     void OnParticleCollision(GameObject collision)
     {
-        if (collision.gameObject.CompareTag("Damage") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Damage"))
         {
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
@@ -202,5 +204,5 @@ public class ControlPlayer : MonoBehaviour
         float frame = anima.GetCurrentAnimatorStateInfo(0).normalizedTime; // Pega o frame atual da animação e normaliza.
         anima.SetFloat("Frames", frame); // Seta o frame atual no novo estado.
     }
+   
 }
-
