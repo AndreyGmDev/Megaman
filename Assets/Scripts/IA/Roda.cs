@@ -8,54 +8,53 @@ public class Roda : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public GameObject wheelOut; // GameObject da parte de fora da Roda.
-    [SerializeField] float speed;
+    [SerializeField] float minSpeed;
+    float speed,speedBoost;
     bool attack;
-    public enum RodaState {walkR, walkL, stop};
+    public enum RodaState {walkR, walkL, stop, attackR, attackL};
     public RodaState rodaState;
 
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         rodaState = RodaState.walkR;
+        speed = minSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DetectPlayer();
-        print(rb.velocity.x);
-        switch (rodaState)
-        {
-            case RodaState.walkR:
-                DetectGroundRight();
-                MoveRight();
-                break;
-            case RodaState.walkL:
-                DetectGroundLeft();
-                MoveLeft();
-                break;
-            case RodaState.stop:
-                DetectGroundRight();
-                DetectGroundLeft();
-                break;
-        };
+        
         
     }
 
-    private void DetectPlayer()
+    private void FixedUpdate()
     {
-        // Faz um raycast para identificar se o player está na frente do inimigo.
-        RaycastHit2D sawPlayerFront;
-        sawPlayerFront = Physics2D.Raycast(transform.position + transform.right * 0.5f + Vector3.up * 0.4f, transform.right, 6.5f);
-        if (sawPlayerFront)
+        print(speed);
+        Rotation();
+        switch (rodaState)
         {
-            if (sawPlayerFront.collider.CompareTag("Player") && attack)
-            {   
-                anim.SetBool("Attack", true);
-            }
-        }
-
+            case RodaState.walkR:
+                anim.SetBool("SawPlayer", false);
+                DetectGroundRight();
+                Move();
+                break;
+            case RodaState.walkL:
+                anim.SetBool("SawPlayer", false);
+                DetectGroundLeft();
+                Move();
+                break;
+            case RodaState.attackR:
+                Attack();
+                DetectGroundRight();
+                break;
+            case RodaState.attackL:
+                Attack();
+                DetectGroundLeft();
+                break;
+        };
     }
+
     private void DetectGroundRight()
     {
         // Faz um raycast para identificar se o player está na frente do inimigo.
@@ -66,20 +65,28 @@ void Start()
         {
             if (sawGround.distance >= 0.4f)
             {
+                speed = -minSpeed;
                 rodaState = RodaState.walkL;
             }
         }
 
         // Faz um raycast para identificar se o player está atrás do inimigo.
         RaycastHit2D sawWall;
-        sawWall = Physics2D.Raycast(transform.position + Vector3.right * 0.3f, Vector3.right);
-        Debug.DrawLine(transform.position + Vector3.right * 0.3f, sawWall.point, Color.yellow);
+        sawWall = Physics2D.Raycast(transform.position + Vector3.right * 0.37f, Vector3.right);
+        Debug.DrawLine(transform.position + Vector3.right * 0.37f, sawWall.point, Color.yellow);
         if (sawWall)
         {
-            if (sawWall.distance <= 0.1f)
+            if (sawWall.distance <= 0.01f)
             {
+                speed = -minSpeed;
                 rodaState = RodaState.walkL;
             }
+            else if (sawWall.collider.CompareTag("Player"))
+            {
+                speedBoost = 1;
+                rodaState = RodaState.attackR;
+            }
+
         }
     }
     private void DetectGroundLeft()
@@ -92,33 +99,46 @@ void Start()
         {
             if (sawGround.distance >= 0.4f)
             {
+                speed = minSpeed;
                 rodaState = RodaState.walkR;
             }
         }
 
         // Faz um raycast para identificar se o player está atrás do inimigo.
         RaycastHit2D sawWall;
-        sawWall = Physics2D.Raycast(transform.position - Vector3.right * 0.3f, Vector3.left);
-        Debug.DrawLine(transform.position - Vector3.right * 0.3f, sawWall.point, Color.yellow);
+        sawWall = Physics2D.Raycast(transform.position - Vector3.right * 0.37f, Vector3.left);
+        Debug.DrawLine(transform.position - Vector3.right * 0.37f, sawWall.point, Color.yellow);
         if (sawWall)
         {
-            if (sawWall.distance <= 0.1f)
+            if (sawWall.distance <= 0.01f)
             {
+                speed = minSpeed;
                 rodaState = RodaState.walkR;
             }
+            else if (sawWall.collider.CompareTag("Player"))
+            {
+                speedBoost = -1;
+                rodaState = RodaState.attackL;
+            }
+
         }
     }
 
-    private void MoveRight()
+    private void Move()
     {
-        rb.velocity = new Vector2(speed, 0) * Time.deltaTime;
-        transform.Rotate(-transform.forward, (speed / 1.5f) * Time.deltaTime);
-
-    }
-    private void MoveLeft()
-    {
-        rb.velocity = new Vector2(-speed, 0) * Time.deltaTime;
-        transform.Rotate(transform.forward, (speed / 1.5f) * Time.deltaTime);
+        rb.velocity = new Vector2(speed, 0) * Time.fixedDeltaTime;
     }
 
+    private void Attack()
+    {
+        anim.SetBool("SawPlayer", true);
+        speed = Mathf.Clamp(speed + speedBoost, -300, 300);
+        rb.velocity = new Vector2(speed,0) * Time.fixedDeltaTime;
+    }
+
+    private void Rotation()
+    {
+        if(rb.velocity.x < 0) transform.Rotate(-transform.forward, (speed * 2.5f) * Time.fixedDeltaTime);
+        if (rb.velocity.x > 0) transform.Rotate(-transform.forward, (speed * 2.5f) * Time.fixedDeltaTime);
+    }
 }

@@ -5246,6 +5246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordArea: {fileID: 616407585889480002}
+  anim: {fileID: 2696207245475951216}
 --- !u!1 &6292819227564064254
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,13 +66,6 @@ public class ControlPlayer : MonoBehaviour
             anima.SetBool("Fire", true); 
             if(!anima.GetBool("Side")) fire.Emit(1); // Condições para o player conseguir atirar.
         }
-        
-        anima.SetBool("SwordAttack", false);
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (!anima.GetBool("Side")) anima.Play("SwordAttack");
-        }
 
         if (Mathf.Abs(xmov)>0) Direction(); // Chama a função que inverte o personagem quando o player está em movimento.
 
@@ -184,7 +177,7 @@ public class ControlPlayer : MonoBehaviour
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Damage"))
+        if (collision.collider.CompareTag("Enemy"))
         {
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
