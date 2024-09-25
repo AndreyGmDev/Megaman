@@ -5233,6 +5233,7 @@ MonoBehaviour:
   rdb: {fileID: 7037361077010411948}
   fire: {fileID: 3663561554373269122}
   jumpBoost: {fileID: 7381604908036110414}
+  jumpBoostSpeed: 2
 --- !u!114 &-4911548223033094629
 MonoBehaviour:
   m_ObjectHideFlags: 0

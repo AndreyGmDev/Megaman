@@ -9757,7 +9757,7 @@ GameObject:
   - component: {fileID: 2986716615231256150}
   - component: {fileID: 7389875974440691056}
   - component: {fileID: 5609984309783627769}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -9868,7 +9868,7 @@ EdgeCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -9941,4 +9941,3 @@ MonoBehaviour:
     type: 3}
   smokePosition: {x: 0, y: 0.68, z: 0}
   colliderDamage: {fileID: 2986716615231256150}
-  Player: {fileID: 5974503362737771284, guid: 3341115707461c647ae2d512af141739, type: 3}

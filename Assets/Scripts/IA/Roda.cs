@@ -8,7 +8,7 @@ public class Roda : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public GameObject wheelOut; // GameObject da parte de fora da Roda.
-    [SerializeField] float minSpeed;
+    [SerializeField] float normalSpeed, attackSpeed;
     float speed,speedBoost;
     bool attack;
     public enum RodaState {walkR, walkL, stop, attackR, attackL};
@@ -18,7 +18,7 @@ public class Roda : MonoBehaviour
     void Start()
     {
         rodaState = RodaState.walkR;
-        speed = minSpeed;
+        speed = normalSpeed;
     }
 
     // Update is called once per frame
@@ -65,7 +65,7 @@ public class Roda : MonoBehaviour
         {
             if (sawGround.distance >= 0.4f)
             {
-                speed = -minSpeed;
+                speed = -normalSpeed;
                 rodaState = RodaState.walkL;
             }
         }
@@ -78,7 +78,7 @@ public class Roda : MonoBehaviour
         {
             if (sawWall.distance <= 0.01f)
             {
-                speed = -minSpeed;
+                speed = -normalSpeed;
                 rodaState = RodaState.walkL;
             }
             else if (sawWall.collider.CompareTag("Player"))
@@ -99,7 +99,7 @@ public class Roda : MonoBehaviour
         {
             if (sawGround.distance >= 0.4f)
             {
-                speed = minSpeed;
+                speed = normalSpeed;
                 rodaState = RodaState.walkR;
             }
         }
@@ -112,7 +112,7 @@ public class Roda : MonoBehaviour
         {
             if (sawWall.distance <= 0.01f)
             {
-                speed = minSpeed;
+                speed = normalSpeed;
                 rodaState = RodaState.walkR;
             }
             else if (sawWall.collider.CompareTag("Player"))
@@ -132,7 +132,7 @@ public class Roda : MonoBehaviour
     private void Attack()
     {
         anim.SetBool("SawPlayer", true);
-        speed = Mathf.Clamp(speed + speedBoost, -300, 300);
+        speed = Mathf.Clamp(speed + speedBoost, -attackSpeed, attackSpeed);
         rb.velocity = new Vector2(speed,0) * Time.fixedDeltaTime;
     }
 

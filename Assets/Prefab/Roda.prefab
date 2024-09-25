@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1376825149054684975}
   - component: {fileID: 4625717331811112756}
   - component: {fileID: 8147782730560706499}
-  - component: {fileID: 3786537573445184043}
   - component: {fileID: 5040280398742853260}
   - component: {fileID: 1844751040194800187}
+  - component: {fileID: 3786537573445184043}
   - component: {fileID: 2814226350989062154}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Roda
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,23 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3786537573445184043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763000708868472371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abae4f102f3dde240bc1aad0ec9787f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 8147782730560706499}
-  rb: {fileID: 1844751040194800187}
-  wheelOut: {fileID: 5518629187057808144}
-  minSpeed: 60
-  rodaState: 0
 --- !u!58 &5040280398742853260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -190,6 +173,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &3786537573445184043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763000708868472371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abae4f102f3dde240bc1aad0ec9787f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 8147782730560706499}
+  rb: {fileID: 1844751040194800187}
+  wheelOut: {fileID: 5518629187057808144}
+  normalSpeed: 60
+  attackSpeed: 300
+  rodaState: 0
 --- !u!114 &2814226350989062154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5850576040530797059}
   - component: {fileID: 4554696621325142772}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

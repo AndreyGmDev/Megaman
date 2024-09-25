@@ -14,6 +14,7 @@ public class ControlPlayer : MonoBehaviour
     float jumpTime, jumpTimeSide, jumpTimeLoad; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
     public Slider jumpBoost;
+    [SerializeField] float jumpBoostSpeed; // Velocidade de carregar o JumpBoost
 
     void Start()
     {
@@ -152,7 +153,7 @@ public class ControlPlayer : MonoBehaviour
         {
             if (hit.distance < 0.01) // Carrega o jumpBoost se o player estiver no chão.
             {
-                if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * 1.5f;
+                if (jumpTimeLoad < 3) jumpTimeLoad += Time.fixedDeltaTime * jumpBoostSpeed;
                 else jumpTimeLoad = 3;
             }
             else

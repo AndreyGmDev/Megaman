@@ -209,7 +209,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &5854839791608707266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   rdb: {fileID: 3801017013095451930}
   colliderTrigger: {fileID: 4520768002235865908}
   delay: 1.5
+  speed: 90
 --- !u!114 &710811742575619943
 MonoBehaviour:
   m_ObjectHideFlags: 0

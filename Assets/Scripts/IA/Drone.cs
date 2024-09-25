@@ -11,7 +11,7 @@ public class Drone : MonoBehaviour
     public Collider2D colliderTrigger;
     GameObject targetPlayer;// Referência ao GameObject do Player.
     
-    [SerializeField] float delay;
+    [SerializeField] float delay, speed;
     float countDelay;
     bool attack;
     float colorAlpha = 1;
@@ -19,7 +19,7 @@ public class Drone : MonoBehaviour
 
     void Start()
     {
-        startPostion = transform.position;
+        startPostion = transform.position; // Pega a posição inicial do Drone.
     }
     void Update()
     {
@@ -33,6 +33,7 @@ public class Drone : MonoBehaviour
         else transform.position += (startPostion - transform.position) * Time.fixedDeltaTime; // Volta o Drone para posição inicial, caso o Player saia de sua área ou morra.
     }
 
+    // Tempo entre os ataques do Drone.
     void ShootDelay()
     {
         if (countDelay < 0)
@@ -40,6 +41,7 @@ public class Drone : MonoBehaviour
         else
             countDelay -= Time.deltaTime;
 
+        // Mostra visualmente na cena o ataque do Drone carregado.
         colorAlpha += Time.deltaTime*0.5f;
         colorAlpha = Mathf.Clamp(colorAlpha,0,1);
         shootSprite.color = new Color(shootSprite.color.r, shootSprite.color.g, shootSprite.color.b, colorAlpha);
@@ -55,7 +57,7 @@ public class Drone : MonoBehaviour
         {
             if (sawPlayerDown.collider.CompareTag("Player") && attack==true)
             {
-                anim.SetBool("Attack", true);
+                anim.SetBool("Attack", true); // Inicia a animação de ataque se o Player estiver colidindo com o Raycast e o cooldown do ataque tiver zerado.
             }
             else
             {
@@ -66,6 +68,7 @@ public class Drone : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Seta o Player como alvo do Drone.
         if (collision.CompareTag("Player"))
         {
             targetPlayer = collision.gameObject;
@@ -75,21 +78,21 @@ public class Drone : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        // Verifica se o ColliderTrigger está collidindo com o Player.
-        if (collision.CompareTag("Player") && !colliderTrigger.IsTouching(collision))
+        // Seta null como alvo do Drone.
+        if (collision.CompareTag("Player") && !colliderTrigger.IsTouching(collision)) // Verifica se o ColliderTrigger do Drone está collidindo com o Player.
         {
             targetPlayer = null;
             anim.SetBool("SawPlayer", false);
         }
     }
 
+    // Move o Drone para o Player.
     void Move()
     {
-        rdb.AddForce(new Vector3(targetPlayer.transform.position.x - transform.position.x, 0, 0) * Time.fixedDeltaTime * 90);
-        //if(targetPlayer.transform.position.x>transform.position.x) transform.position += Vector3.right * Time.fixedDeltaTime * 2.5f;
-        //else if (targetPlayer.transform.position.x < transform.position.x) transform.position -= Vector3.right * Time.fixedDeltaTime * 2.5f;
+        rdb.AddForce(new Vector3(targetPlayer.transform.position.x - transform.position.x, 0, 0) * Time.fixedDeltaTime * speed);
     }
 
+    // Função ataque é chamada em um frame da animação de ataque.
     void Attack()
     {
         shootSprite.color = new Color(shootSprite.color.r, shootSprite.color.g, shootSprite.color.b, 0);
